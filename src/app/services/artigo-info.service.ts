@@ -13,10 +13,12 @@ const httpOptions = {
 @Injectable()
 export class ArtigoInfoService {
 
+// Indicando de que api vou retirar os dados
 webApiUrl: string = 'http://localhost:3000/artigo';
 
   constructor(private http: HttpClient) { }
 
+// Solicitando visualizar os documentos da api
   getAllArtigos() {
     // return this.http.get<Artigo[]>(this.webApiUrl).toPromise().then(res => res);
     return this.http.get<Artigo[]>(this.webApiUrl);
@@ -32,11 +34,13 @@ webApiUrl: string = 'http://localhost:3000/artigo';
 
   }*/
 
+// Teste para salvar um artigo novo a database
   saveArtigos() {
     const body = JSON.stringify(Artigo);
     return this.http.post<any>(this.webApiUrl, body);
   }
 
+  // Teste para deletar um artigo novo a database
   deleteArtigos(id: number) {
     return this.http.delete<any>(this.webApiUrl + '/' + id);
   }/*

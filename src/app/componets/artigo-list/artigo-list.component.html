@@ -1,0 +1,38 @@
+<p>
+  artigo-list works!
+</p>
+
+<ul>
+  <li *ngFor="let artigo of artigoList">
+    {{ artigo.autor }}
+  </li>
+</ul>
+
+
+<p-dataTable [value]="artigoList">
+  <p-header>
+      <div class="ui-helper-clearfix" style="width:100%">
+        <span>Artigos</span>
+        <button type="button" pButton icon="fa-plus" style="float:right" label="Add"
+            (click)="addNewArtigo()"></button>
+      </div>
+  </p-header>
+  <p-column field="titulo" header="Titulo"></p-column>
+  <p-column field="autor" header="Autor"></p-column>
+  <p-column field="conteudo" header="Conteudo"></p-column>
+  <p-column field="categoria" header="Categoria"></p-column>
+
+  <p-column styleClass="artigo-button" [style]="{'width':'75px','text-align':'center'}">
+      <ng-template let-artigo="rowData" pTemplate="body">
+          <button type="button" pButton (click)="selectArtigo(artigo)"  icon="fa-edit"></button>
+      </ng-template>
+  </p-column>
+  <p-column styleClass="artigo-button" [style]="{'width':'75px','text-align':'center'}">
+      <ng-template let-artigo="rowData" pTemplate="body">
+          <button type="button" pButton  (click)="deleteArtigo(artigo.id)" icon="fa-trash" class="ui-button-danger"></button>
+      </ng-template>
+  </p-column>
+</p-dataTable>
+
+<p-confirmDialog header="Confirmation" icon="fa fa-question-circle" width="425"></p-confirmDialog>
+

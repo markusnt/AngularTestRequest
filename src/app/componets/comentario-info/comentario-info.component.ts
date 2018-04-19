@@ -15,7 +15,7 @@ export class ComentarioInfoComponent implements OnInit {
   ngOnInit() {
   }
 
-  deleteFavourite(comentario: Comentario) {
+  deleteComentario(comentario: Comentario) {
     this.deleteComentarioNotify.emit(comentario);
   }
 

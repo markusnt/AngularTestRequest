@@ -23,6 +23,7 @@ export class ArtigoDetailComponent implements OnInit {
   ngOnInit() {
   }
 
+  // Teste para savar artigo no database
   /*saveArtigoInfo() {
     this.artigoService.saveArtigos(this.artigo).subscribe(
       data => {
@@ -35,20 +36,21 @@ export class ArtigoDetailComponent implements OnInit {
     );
   }*/
 
+  // Teste para adicionar um comentario
   addComentario() {
-    //this.artigo.comentarios.push({ autor: '', texto: '' });
+    // this.artigo.comentarios.push({ autor: '', texto: '' });
     this.artigo.comentarios.push({ id: 1 , autor: '', texto: ''});
   }
 
+  // Teste para salvar sem usar subscribe
   /* saveArtigoInfo() {
     /*this.artigoService.getAllArtigos().then(res => {
       this.artigoList = res;
     })
     .catch(erro => console.log(erro));/*
-    this.artigoService.getAllArtigos().then( res => { this.artigoList = res; })
-    .catch(erro => console.log(erro));
   }*/
 
+  // Metododo para deletar comentario
   /*deleteComentario(comentario: Comentario) {
     const comIndex = this.comentario.comentarioCollection.indexOf(comentario);
     if (comIndex >= 0) {
@@ -56,6 +58,7 @@ export class ArtigoDetailComponent implements OnInit {
     }
   }*/
 
+  // Fechar caixa de dialogo que mostra os detalhes
   closeFormDialog() {
     this.display = false;
     this.closeDialogEvent.emit();

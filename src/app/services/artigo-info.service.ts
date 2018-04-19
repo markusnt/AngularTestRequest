@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Artigo } from './../models/artigo';
 import { Observable } from 'rxjs/Observable';
-//import { catchError } from 'rxjs/add/operator/catch';
+// import { catchError } from 'rxjs/add/operator/catch';
 
 
 const httpOptions = {
@@ -14,6 +14,7 @@ const httpOptions = {
 export class ArtigoInfoService {
 
 // Indicando de que api vou retirar os dados
+// tslint:disable-next-line:no-inferrable-types < -- Isso e pq nao sei pq o string ta ficando a linha vermelha embaixo
 webApiUrl: string = 'http://localhost:3000/artigo';
 
   constructor(private http: HttpClient) { }

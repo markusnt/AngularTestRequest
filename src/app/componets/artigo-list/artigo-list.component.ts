@@ -22,6 +22,7 @@ export class ArtigoListComponent implements OnInit {
     this.getAllArtigos();
   }
 
+  // Solicitar os dados da database json
   getAllArtigos() {
     /*this.artigoService.getAllArtigos().then(res => {
       this.artigoList = res;
@@ -38,11 +39,12 @@ export class ArtigoListComponent implements OnInit {
     this.artigo = Object.assign({}, artigo);
   }
 
+  // Adicionar um novo artigo a database
   addNewArtigo() {
     this.artigo = new Artigo();
   }
 
-
+  // Salvar um artigo a database
   saveArtigo(artigo: Artigo) {
     const artigoFilterdList = this.artigoList.filter(a => a.id === artigo.id);
     console.log(artigoFilterdList);
@@ -58,10 +60,10 @@ export class ArtigoListComponent implements OnInit {
     this.artigo = null;
   }
 
-
+  // Deletar um artigo da database com dialogo de confirmação
   deleteArtigo(artigo: Artigo) {
     this.confirmationService.confirm({
-      message: 'Are you sure that you want to remove candidate?',
+      message: 'Are you sure that you want to remove artigo?',
       accept: () => {
           this.artigoService.deleteArtigos(artigo.id).subscribe();
       }

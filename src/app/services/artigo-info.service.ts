@@ -46,7 +46,7 @@ webApiUrl: string = 'http://localhost:3000/artigo';
     return this.http.delete(this.webApiUrl + '/' + id).toPromise().then(res => res).catch();
   }/*
   deleteArtigos (id: number): Observable<{}> {
-    const url = `${this.webApiUrl}/${id}`; // DELETE api/heroes/42
+    const url = `${this.webApiUrl}/${id}`; //
     return this.http.delete(url, httpOptions)
   }*/
 }

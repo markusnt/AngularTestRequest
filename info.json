@@ -13,20 +13,6 @@
           "texto": "Esse aki e um comentario teste para testar coisas coisadas hue"
         }
       ]
-    },
-    {
-      "id": 2,
-      "titulo": "Teste 2",
-      "autor": "Zorak",
-      "conteudo": "Musiquitas",
-      "categoria": "FINANCEIRO",
-      "comentarios": [
-        {
-          "id": 1,
-          "autor": "Eu Mesmo",
-          "texto": "https://www.youtube.com/imagina_q_tem_um_link_de_musica_aki"
-        }
-      ]
     }
   ]
 }

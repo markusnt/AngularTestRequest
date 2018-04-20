@@ -61,11 +61,15 @@ export class ArtigoListComponent implements OnInit {
   }
 
   // Deletar um artigo da database com dialogo de confirmação
-  deleteArtigo(artigo: Artigo) {
+  deleteArtigo(id: number) {
     this.confirmationService.confirm({
       message: 'Are you sure that you want to remove artigo?',
       accept: () => {
-          this.artigoService.deleteArtigos(artigo.id).subscribe();
+          this.artigoService.deleteArtigos(id).then(res => {
+            console.log('deu bom');
+          }).catch(() => {
+            console.log('deu ruim');
+         });
       }
     });
   }
